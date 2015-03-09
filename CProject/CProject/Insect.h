@@ -6,13 +6,13 @@ class Insect
 
 	
 protected:
-	Insect(int,int);
+	Insect();
 
 public:
 	bool hasMoved;
 	bool hasAttacked;
-	int x;
-	int y;
+
+
 private:
 
 

@@ -6,16 +6,15 @@ class Aphid :
 	public Insect
 {
 public:
-	Aphid(int,int);
+	Aphid();
 	~Aphid();
 	void attack();
-	void move();
-	void mate();
 
-	static float movement_Prob;
-	static float Group_Attack_Mod;
-	static float kill_Prob;
-	static float reproduce_Prob;
+
+	static float Aphid::movement_Prob;
+	static float Aphid::Group_Attack_Mod;
+	static float Aphid::kill_Prob;
+	static float Aphid::reproduce_Prob;
 
 
 

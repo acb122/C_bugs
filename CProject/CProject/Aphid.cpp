@@ -1,7 +1,8 @@
 #include "Aphid.h"
 
 
-Aphid::Aphid(int x,int y) :Insect(x,y)
+
+Aphid::Aphid() :Insect()
 {
 }
 
@@ -9,3 +10,4 @@ Aphid::Aphid(int x,int y) :Insect(x,y)
 Aphid::~Aphid()
 {
 }
+

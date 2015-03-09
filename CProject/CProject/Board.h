@@ -13,8 +13,9 @@ public:
 	Board();
 	Board(int,int);
 	~Board();
-	void  add(Aphid*);
-	void  add(Ladybug*);
+	void  add(Aphid*,int,int);
+	void  add(Ladybug*,int,int);
+	void move();
 	void print();
 
 

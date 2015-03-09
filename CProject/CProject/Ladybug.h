@@ -5,7 +5,7 @@ class Ladybug :
 	public Insect
 {
 public:
-	Ladybug(int,int);
+	Ladybug();
 	~Ladybug();
 	void attack();
 	void move();
@@ -15,6 +15,8 @@ public:
 	static float direction_Change_Prob;
 	static float kill_Prob;
 	static float reproduce_Prob;
+
+	int heading = 0;
 
 
 

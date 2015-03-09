@@ -20,3 +20,4 @@ void Cell::add(Aphid * aphid){
 	aphids.push_back(aphid);
 	numA++;
 }
+
