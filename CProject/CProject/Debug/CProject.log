@@ -1,0 +1,21 @@
+﻿Build started 07/03/2015 17:56:51.
+     1>Project "C:\Users\xander\Documents\GitHub\C_bugs\CProject\CProject\CProject.vcxproj" on node 2 (Rebuild target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Aphid.cpp Board.cpp Cell.cpp Insect.cpp Ladybug.cpp Program.cpp
+         Program.cpp
+         Ladybug.cpp
+         Insect.cpp
+         Cell.cpp
+     1>c:\users\xander\documents\github\c_bugs\cproject\cproject\cell.cpp(17): error C2661: 'std::list<Aphid,std::allocator<_Ty>>::insert' : no overloaded function takes 1 arguments
+                 with
+                 [
+                     _Ty=Aphid
+                 ]
+         Board.cpp
+         Aphid.cpp
+         Generating Code...
+     1>Done Building Project "C:\Users\xander\Documents\GitHub\C_bugs\CProject\CProject\CProject.vcxproj" (Rebuild target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.76
