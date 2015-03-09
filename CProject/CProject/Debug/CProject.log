@@ -1,4 +1,4 @@
-﻿Build started 07/03/2015 17:56:51.
+﻿Build started 09/03/2015 15:30:15.
      1>Project "C:\Users\xander\Documents\GitHub\C_bugs\CProject\CProject\CProject.vcxproj" on node 2 (Rebuild target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Aphid.cpp Board.cpp Cell.cpp Insect.cpp Ladybug.cpp Program.cpp
@@ -6,16 +6,19 @@
          Ladybug.cpp
          Insect.cpp
          Cell.cpp
-     1>c:\users\xander\documents\github\c_bugs\cproject\cproject\cell.cpp(17): error C2661: 'std::list<Aphid,std::allocator<_Ty>>::insert' : no overloaded function takes 1 arguments
-                 with
-                 [
-                     _Ty=Aphid
-                 ]
          Board.cpp
          Aphid.cpp
          Generating Code...
-     1>Done Building Project "C:\Users\xander\Documents\GitHub\C_bugs\CProject\CProject\CProject.vcxproj" (Rebuild target(s)) -- FAILED.
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\xander\Documents\GitHub\C_bugs\CProject\Debug\CProject.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\xander\Documents\GitHub\C_bugs\CProject\Debug\CProject.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\xander\Documents\GitHub\C_bugs\CProject\Debug\CProject.lib" /MACHINE:X86 Debug\Aphid.obj
+         Debug\Board.obj
+         Debug\Cell.obj
+         Debug\Insect.obj
+         Debug\Ladybug.obj
+         Debug\Program.obj
+         CProject.vcxproj -> C:\Users\xander\Documents\GitHub\C_bugs\CProject\Debug\CProject.exe
+     1>Done Building Project "C:\Users\xander\Documents\GitHub\C_bugs\CProject\CProject\CProject.vcxproj" (Rebuild target(s)).
 
-Build FAILED.
+Build succeeded.
 
-Time Elapsed 00:00:00.76
+Time Elapsed 00:00:01.89

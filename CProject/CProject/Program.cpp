@@ -4,6 +4,7 @@ using namespace std;
 
 #include "Board.h"
 #include "Aphid.h"
+#include "Ladybug.h"
 #include "Insect.h"
 
 Program::Program()
@@ -18,10 +19,14 @@ Program::~Program()
 {
 }
 
+void Program::print(){
+	board->print();
+
+}
 
 int main(){
 
-	Program p = Program();
+	Program program = Program();
 	
 	ifstream myfile ("aphids.conf");
 	if (myfile.is_open()){
@@ -50,16 +55,17 @@ int main(){
 	ifstream myfile3("aphidsAndLadybugs.conf");
 	if (myfile3.is_open()){
 		cin >> w >> h;
-		Board * b = new Board(w, h); 
-			p.board = b;
+		program.board = new Board(w, h); 
+		
+			
 		//07977598613
 		cin >> aphidsN;
 		for (i = 0; aphidsN > i; i++){
 			int x, y;
 			cin >> x >> y;
-			Aphid * aphid = new Aphid(x,y);
 			
-			b->add(aphid);
+			
+			program.board->add(new Aphid(x, y));
 
 		}
 
@@ -67,8 +73,8 @@ int main(){
 		for (i = 0; ladybugsN > i; i++){
 			int x, y;
 			cin >> x >> y;
-			//Ladybug * temp = new LadyBug(x,y);
-			//board_add(temp,x,y);
+			program.board->add(new Ladybug(x, y));
+			
 
 		}
 		
@@ -76,6 +82,6 @@ int main(){
 	else{
 		cout << "insects not added";
 	}
-
+	program.print();
 
 }

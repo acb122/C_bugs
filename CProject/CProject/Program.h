@@ -27,8 +27,9 @@ class Program {
 		void get_Data();
 		void set_up();
 		void setboard(Board*);
+		void print();
 		Board * board;
-		Board nextBoard;
+		Board * nextBoard;
 	
 	private:
 		

@@ -22,12 +22,15 @@ public:
 	void Update(Board,Ladybug);
 	void add(Aphid * );
 	void add(Ladybug *);
+	int numA = 0;
+	int numL = 0;
 
 private:
 	int x;
 	int y;
-	std::list<Ladybug> ladybugs;
-	std::list<Aphid> aphids;
+
+	std::list<Ladybug*>  ladybugs;
+	std::list<Aphid*>  aphids;
 
 	
 
