@@ -17,6 +17,8 @@ public:
 	void  add(Ladybug*,int,int);
 	void move();
 	void print();
+	void attack();
+	void breed();
 
 
 private:

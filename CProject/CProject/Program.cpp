@@ -26,6 +26,9 @@ void Program::print(){
 
 void Program::update(){
 	this->board->move();
+	this->board->attack();
+	this->board->breed();
+
 }
 
 int main(){

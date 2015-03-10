@@ -1,4 +1,7 @@
 #include "Board.h"
+#include <string>
+#include <iostream>
+
 using namespace std;
 
 Board::Board() :w(0), h(0)
@@ -29,12 +32,118 @@ void Board::add(Ladybug * ladybug, int x, int y){
 void Board::print(){
 	for (int x = 0; x < w; x++){
 		for (int y = 0; y < h; y++){
-			cout << cells[x][y].aphids.size() << cells[x][y].ladybugs.size();
+			int aphidsN = cells[x][y].aphids.size();
+			int ladybirdsN = cells[x][y].ladybugs.size();
+			string ladybird;
+			string aphid;
+				if(aphidsN == 0){
+					cout << "|" << " ";
+
+				}
+				else if (aphidsN > 9){
+					cout << "|" << "~";
+
+				}
+				else{
+					cout << "|" << aphidsN;
+					}
+
+				cout << ",";
+
+				if (ladybirdsN == 0){
+					cout << " "<<"|";
+
+				}
+				else if (ladybirdsN > 9){
+					cout << "~"<<"|";
+
+				}
+				else{
+					cout << ladybirdsN << "|";
+			}
+
+			
 
 		}
 		cout << endl;
 	}
 }
+
+void Board::breed(){
+	for (int x = 0; x < this->w; x++){
+
+		for (int y = 0; y < this->h; y++){
+
+			int numL = cells[x][y].ladybugs.size();
+			for (int z = 0; z < numL /2; z++){
+				Ladybug * baby = new Ladybug();
+				float move = (rand() % 10000) / 10000.0;
+				if (baby->reproduce_Prob < move){
+					cells[x][y].add(baby);
+				}
+				else{
+					delete(baby);
+				}
+
+			}
+
+			int numA = cells[x][y].aphids.size();
+			for (int z = 0; z < numA /2 ; z++){
+				Aphid * baby = new Aphid();
+				float move = (rand() % 10000) / 10000.0;
+				if (baby->reproduce_Prob < move){
+					cells[x][y].add(baby);
+				}
+				else{
+					delete(baby);
+				}
+
+			}
+		}
+	}
+}
+
+void Board::attack(){
+	for (int x = 0; x < this->w; x++){
+
+		for (int y = 0; y < this->h; y++){
+
+			int numL = cells[x][y].ladybugs.size();
+
+			for (int z = 0; z < numL; z++){
+				if (cells[x][y].aphids.size() > 0){
+					float move = (rand() % 10000) / 10000.0;
+					Ladybug * attackL = cells[x][y].ladybugs.front();
+					if (attackL->kill_Prob < move){
+						cells[x][y].aphids.pop_front();
+
+					}
+
+
+				}
+			}
+			int numA = cells[x][y].aphids.size();
+
+
+			for (int z = 0; z < numA; z++){
+				if (cells[x][y].ladybugs.size() > 0){
+					float attack_pb = (rand() % 10000) / 10000.0;
+
+					Aphid * attackA = cells[x][y].aphids.front();
+					attack_pb = attack_pb + (attackA->Group_Attack_Mod*numA);
+
+					if (attackA->kill_Prob < attack_pb){
+						cells[x][y].ladybugs.pop_front();
+
+					}
+
+				}
+			}
+		}
+	}
+}
+
+
 
 void Board::move(){
 
