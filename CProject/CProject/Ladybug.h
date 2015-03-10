@@ -16,7 +16,7 @@ public:
 	static float kill_Prob;
 	static float reproduce_Prob;
 
-	int heading = 0;
+	int heading;
 
 
 

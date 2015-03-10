@@ -62,6 +62,8 @@ int main(){
 	ifstream myfile3("aphidsAndLadybugs.conf");
 	if (myfile3.is_open()){
 		myfile3 >> w >> h;
+		cout << w;
+		cout << endl;
 		program.board = new Board(w, h); 
 		
 			
@@ -90,7 +92,16 @@ int main(){
 		cout << "insects not added";
 	}
 	program.print();
+	getchar();
 	program.update();
 	program.print();
-
+	getchar();
+	program.update();
+	program.print();
+	getchar();
+	program.update();
+	program.print();
+	getchar();
+	program.update();
+	program.print();
 }
