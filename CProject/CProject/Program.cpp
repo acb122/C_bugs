@@ -91,17 +91,10 @@ int main(){
 	else{
 		cout << "insects not added";
 	}
-	program.print();
-	getchar();
-	program.update();
-	program.print();
-	getchar();
-	program.update();
-	program.print();
-	getchar();
-	program.update();
-	program.print();
-	getchar();
-	program.update();
-	program.print();
+	while(1 == 1){
+		program.print();
+		getchar();
+		program.update();
+	}
+	
 }

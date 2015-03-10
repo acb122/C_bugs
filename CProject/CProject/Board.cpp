@@ -29,7 +29,7 @@ void Board::add(Ladybug * ladybug, int x, int y){
 void Board::print(){
 	for (int x = 0; x < w; x++){
 		for (int y = 0; y < h; y++){
-			cout << cells[x][y].numA << cells[x][y].numL;
+			cout << cells[x][y].aphids.size() << cells[x][y].ladybugs.size();
 
 		}
 		cout << endl;
@@ -41,8 +41,8 @@ void Board::move(){
 	for (int x = 0; x < this->w; x++){
 
 		for (int y = 0; y < this->h; y++){
-			
-			for (int z = 0; z < cells[x][y].numA; z++){
+
+			for (int z = 0; z < cells[x][y].aphids.size(); z++){
 
 				Aphid * moveA = cells[x][y].aphids.front();
 				cells[x][y].aphids.pop_front();
@@ -54,24 +54,24 @@ void Board::move(){
 				{
 					moveA->hasMoved = true;
 					int position = rand() % 8;
-					int yminus = y-1;
-					if (yminus<0){
+					int yminus = y - 1;
+					if (yminus < 0){
 						yminus = 1;
-											}
-					int yplus = y+1;
+					}
+					int yplus = y + 1;
 					if (yplus == w){
 						yplus = w - 1;
-						
-					
+
+
 					}
-					int xminus=x-1;
-					if (xminus<0){
+					int xminus = x - 1;
+					if (xminus < 0){
 						xminus = 1;
 					}
-					int xplus=x+1;
+					int xplus = x + 1;
 					if (xplus == h){
 						xplus = x - 1;
-																}
+					}
 					switch (position)
 					{
 
@@ -89,7 +89,7 @@ void Board::move(){
 
 
 					}
-				
+
 
 				}
 				else{
@@ -100,7 +100,7 @@ void Board::move(){
 
 
 			}
-			for (int z = 0; z < cells[x][y].numL; z++){
+			for (int z = 0; z < cells[x][y].ladybugs.size(); z++){
 
 				Ladybug * moveA = cells[x][y].ladybugs.front();
 				cells[x][y].ladybugs.pop_front();
@@ -113,7 +113,7 @@ void Board::move(){
 					int position = rand() % 3;
 
 					int yminus = y - 1;
-					if (yminus<0){
+					if (yminus < 0){
 						yminus = 1;
 					}
 					int yplus = y + 1;
@@ -123,7 +123,7 @@ void Board::move(){
 
 					}
 					int xminus = x - 1;
-					if (xminus<0){
+					if (xminus < 0){
 						xminus = 1;
 					}
 					int xplus = x + 1;
@@ -188,7 +188,7 @@ void Board::move(){
 
 						}
 					}
-				
+
 				}
 
 
@@ -200,9 +200,31 @@ void Board::move(){
 			}
 
 		}
-		
+
 	}
 
+
+	for (int x = 0; x < this->w; x++){
+
+		for (int y = 0; y < this->h; y++){
+
+			for (int z = 0; z < cells[x][y].aphids.size(); z++){
+				Aphid * moveA = cells[x][y].aphids.front();
+				cells[x][y].aphids.pop_front();
+				moveA->hasMoved = false;
+				cells[x][y].aphids.push_back(moveA);
+
+			}
+
+			for (int z = 0; z < cells[x][y].ladybugs.size(); z++){
+
+				Ladybug * moveA = cells[x][y].ladybugs.front();
+				cells[x][y].ladybugs.pop_front();
+				moveA->hasMoved = false;
+				cells[x][y].ladybugs.push_back(moveA);
+			}
+		}
+	}
 }
 
 Board::~Board()
