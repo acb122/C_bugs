@@ -1,8 +1,9 @@
-﻿Build started 10/03/2015 21:03:46.
+﻿Build started 12/03/2015 15:16:33.
      1>Project "C:\Users\xander\Documents\GitHub\C_bugs\CProject\CProject\CProject.vcxproj" on node 2 (Rebuild target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Aphid.cpp Board.cpp Cell.cpp Insect.cpp Ladybug.cpp Program.cpp
          Program.cpp
+     1>c:\users\xander\documents\github\c_bugs\cproject\cproject\program.cpp(37): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
          Ladybug.cpp
          Insect.cpp
          Cell.cpp
@@ -31,4 +32,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.65
+Time Elapsed 00:00:02.25

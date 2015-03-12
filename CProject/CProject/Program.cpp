@@ -1,4 +1,6 @@
 #include "Program.h"
+#include <vld.h> 
+#include <ctime>
 
 using namespace std;
 
@@ -32,18 +34,18 @@ void Program::update(){
 }
 
 int main(){
-
+	srand(time(0));
 	Program program = Program();
-	
-	ifstream myfile ("aphids.conf");
+
+	ifstream myfile("aphids.conf");
 	if (myfile.is_open()){
 
 
-		myfile >> Aphid::movement_Prob ;
+		myfile >> Aphid::movement_Prob;
 		myfile >> Aphid::kill_Prob;
 		myfile >> Aphid::Group_Attack_Mod;
 		myfile >> Aphid::reproduce_Prob;
-	
+
 	}
 	else{
 		cout << "aphids not found";
@@ -60,24 +62,24 @@ int main(){
 		cout << "ladybugs not found";
 	}
 
-	int w, h, aphidsN,ladybugsN,i;
-	
+	int w, h, aphidsN, ladybugsN, i;
+
 	ifstream myfile3("aphidsAndLadybugs.conf");
 	if (myfile3.is_open()){
 		myfile3 >> w >> h;
 		cout << w;
 		cout << endl;
-		program.board = new Board(w, h); 
-		
-			
+		program.board = new Board(w, h);
+
+
 		//07977598613
 		myfile3 >> aphidsN;
 		for (i = 0; aphidsN > i; i++){
 			int x, y;
 			myfile3 >> x >> y;
-			
-			
-			program.board->add(new Aphid(),x,y);
+
+
+			program.board->add(new Aphid(), x, y);
 
 		}
 
@@ -85,19 +87,33 @@ int main(){
 		for (i = 0; ladybugsN > i; i++){
 			int x, y;
 			myfile3 >> x >> y;
-			program.board->add(new Ladybug(),x,y);
-			
+			program.board->add(new Ladybug(), x, y);
+
 
 		}
-		
+
 	}
 	else{
 		cout << "insects not added";
 	}
-	while(1 == 1){
+
+	int counter = 0;
+	while (program.board->empty() == false){
 		program.print();
-		getchar();
+		
 		program.update();
+		counter++;
+		cout << counter << endl;
+				
+			
+			
+			
+			
+			
+			
+			
+			
 	}
+	getchar();
 	
 }

@@ -19,6 +19,7 @@ public:
 	void print();
 	void attack();
 	void breed();
+	bool empty();
 
 
 private:

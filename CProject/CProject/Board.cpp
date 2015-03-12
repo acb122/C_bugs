@@ -78,7 +78,7 @@ void Board::breed(){
 			for (int z = 0; z < numL /2; z++){
 				Ladybug * baby = new Ladybug();
 				float move = (rand() % 10000) / 10000.0;
-				if (baby->reproduce_Prob < move){
+				if (baby->reproduce_Prob > move){
 					cells[x][y].add(baby);
 				}
 				else{
@@ -91,7 +91,7 @@ void Board::breed(){
 			for (int z = 0; z < numA /2 ; z++){
 				Aphid * baby = new Aphid();
 				float move = (rand() % 10000) / 10000.0;
-				if (baby->reproduce_Prob < move){
+				if (baby->reproduce_Prob > move){
 					cells[x][y].add(baby);
 				}
 				else{
@@ -114,7 +114,7 @@ void Board::attack(){
 				if (cells[x][y].aphids.size() > 0){
 					float move = (rand() % 10000) / 10000.0;
 					Ladybug * attackL = cells[x][y].ladybugs.front();
-					if (attackL->kill_Prob < move){
+					if (attackL->kill_Prob > move){
 						cells[x][y].aphids.pop_front();
 
 					}
@@ -336,6 +336,30 @@ void Board::move(){
 	}
 }
 
+bool Board::empty(){
+	int counterA=0;
+	int counterL=0;
+
+	for (int x = 0; x < this->w; x++){
+
+		for (int y = 0; y < this->h; y++){
+			counterA += cells[x][y].aphids.size();
+			counterL += cells[x][y].ladybugs.size();
+
+		}
+	}
+	
+	cout << counterA<<endl;
+	cout << counterL << endl;
+	if (counterA == 0 || counterL == 0){
+		return true;
+
+	}
+	else{
+		return false;
+	}
+
+}
 Board::~Board()
 {
 }
