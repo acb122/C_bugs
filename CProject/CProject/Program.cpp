@@ -98,21 +98,21 @@ int main(){
 	}
 
 	int counter = 0;
-	while (program.board->empty() == false){
-		program.print();
-		
+	do
+	{
+		program.print();	
 		program.update();
 		counter++;
-		cout << counter << endl;
-				
-			
-			
-			
-			
-			
-			
-			
-			
+		cout <<"Turn : "<< counter << endl;
+	} while (program.board->empty() == false);
+	
+
+	if (program.board->ladybugWin() == true){
+		cout << "No Aphids left winner is Ladybugs";
+	}
+	else{
+		cout << "No Ladybugs left winner is Aphids";
+	
 	}
 	getchar();
 	

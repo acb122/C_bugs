@@ -352,9 +352,34 @@ bool Board::empty(){
 		}
 	}
 	
-	cout << counterA<<endl;
-	cout << counterL << endl;
+	cout <<" Number of Aphids left "<< counterA <<endl;
+	cout << " Number of Ladybugs left " << counterL << endl;
 	if (counterA == 0 || counterL == 0){
+		return true;
+
+	}
+	else{
+		return false;
+	}
+
+}
+
+bool Board::ladybugWin(){
+	
+	
+	int counterL = 0;
+
+	for (int x = 0; x < this->w; x++){
+
+		for (int y = 0; y < this->h; y++){
+			
+			counterL += cells[x][y].ladybugs.size();
+
+		}
+	}
+
+	
+	if (counterL == 0){
 		return true;
 
 	}

@@ -20,7 +20,7 @@ public:
 	void attack();
 	void breed();
 	bool empty();
-
+	bool ladybugWin();
 
 private:
 	Cell ** cells;
