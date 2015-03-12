@@ -1,4 +1,4 @@
-﻿Build started 12/03/2015 15:16:33.
+﻿Build started 12/03/2015 15:54:58.
      1>Project "C:\Users\xander\Documents\GitHub\C_bugs\CProject\CProject\CProject.vcxproj" on node 2 (Rebuild target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Aphid.cpp Board.cpp Cell.cpp Insect.cpp Ladybug.cpp Program.cpp
@@ -16,8 +16,8 @@
      1>c:\users\xander\documents\github\c_bugs\cproject\cproject\board.cpp(160): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
      1>c:\users\xander\documents\github\c_bugs\cproject\cproject\board.cpp(212): warning C4018: '<' : signed/unsigned mismatch
      1>c:\users\xander\documents\github\c_bugs\cproject\cproject\board.cpp(217): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\xander\documents\github\c_bugs\cproject\cproject\board.cpp(320): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\xander\documents\github\c_bugs\cproject\cproject\board.cpp(328): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\xander\documents\github\c_bugs\cproject\cproject\board.cpp(323): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\xander\documents\github\c_bugs\cproject\cproject\board.cpp(331): warning C4018: '<' : signed/unsigned mismatch
          Aphid.cpp
          Generating Code...
        Link:
@@ -32,4 +32,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:02.25
+Time Elapsed 00:00:02.15

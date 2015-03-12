@@ -219,25 +219,28 @@ void Board::move(){
 				if (move < moveA->movement_Prob&&moveA->hasMoved == false)
 				{
 					moveA->hasMoved = true;
-					int position = rand() % 3;
+					int position = (rand() % 3)/3;
 
 					int yminus = y - 1;
 					if (yminus < 0){
 						yminus = 1;
+						moveA->heading = 2;
 					}
 					int yplus = y + 1;
 					if (yplus == w){
 						yplus = w - 1;
-
+						moveA->heading = 0;
 
 					}
 					int xminus = x - 1;
 					if (xminus < 0){
 						xminus = 1;
+						moveA->heading = 1;
 					}
 					int xplus = x + 1;
 					if (xplus == h){
 						xplus = x - 1;
+						moveA->heading = 3;
 					}
 
 					if (moveA->heading == 0){
