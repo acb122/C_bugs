@@ -1,5 +1,6 @@
-﻿Build started 16/03/2015 17:53:07.
+﻿Build started 17/03/2015 14:39:09.
      1>Project "C:\Users\xander\Documents\GitHub\C_bugs\CProject\CProject\CProject.vcxproj" on node 2 (Rebuild target(s)).
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppClean.targets(76,5): warning : Access to the path 'c:\users\xander\documents\github\c_bugs\cproject\debug\cproject.exe' is denied.
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Aphid.cpp Board.cpp Cell.cpp Insect.cpp Ladybug.cpp Program.cpp
          Program.cpp
@@ -32,4 +33,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:02.24
+Time Elapsed 00:00:02.02

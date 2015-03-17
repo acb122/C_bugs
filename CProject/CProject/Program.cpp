@@ -114,6 +114,8 @@ int main(){
 		cout << "No Ladybugs left winner is Aphids";
 	
 	}
+	cout << endl;
+	program.print();
 	getchar();
 	
 }
