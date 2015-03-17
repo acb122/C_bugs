@@ -8,7 +8,7 @@ class Aphid :
 public:
 	Aphid();
 	~Aphid();
-	void attack();
+
 
 
 	static float Aphid::movement_Prob;

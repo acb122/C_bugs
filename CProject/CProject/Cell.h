@@ -21,15 +21,14 @@ public:
 
 	void Update(Board,Aphid);
 	void Update(Board,Ladybug);
-
+	void print();
 	void add(Aphid * );
 	void add(Ladybug *);
-	int numA = 0;
-	int numL = 0;
-	int x;
-	int y;
+	void breed();
+	void attack();
 	std::list<Ladybug*>  ladybugs;
 	std::list<Aphid*>  aphids;
+
 
 private:
 	

@@ -1,6 +1,6 @@
 #include "Insect.h"
 
 
-Insect::Insect(): hasMoved(false), hasAttacked(false){}
+Insect::Insect(): hasMoved(false){}
 
 

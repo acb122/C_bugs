@@ -10,7 +10,7 @@ protected:
 
 public:
 	bool hasMoved;
-	bool hasAttacked;
+
 
 
 private:

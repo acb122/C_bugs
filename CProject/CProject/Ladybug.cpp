@@ -11,3 +11,13 @@ Ladybug::Ladybug() : Insect()
 Ladybug::~Ladybug()
 {
 }
+
+int Ladybug::getHeading()
+{
+	return heading;
+}
+
+void Ladybug::setHeading(int x)
+{
+	this->heading = x;
+}
