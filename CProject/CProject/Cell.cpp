@@ -20,7 +20,7 @@ void Cell::attack(){
 
 	for (int z = 0; z < numL; z++){
 		if (aphids.size() > 0){
-			float move = (rand() % 10000) / 10000.0;
+			float move = (rand() % 10000) / 10000.0f;
 			Ladybug * attackL = ladybugs.front();
 			if (attackL->kill_Prob > move){
 				aphids.pop_front();
@@ -35,7 +35,7 @@ void Cell::attack(){
 
 	for (int z = 0; z < numA; z++){
 		if (ladybugs.size() > 0){
-			float attack_pb = (rand() % 10000) / 10000.0;
+			float attack_pb = (rand() % 10000) / 10000.0f;
 
 			Aphid * attackA = aphids.front();
 			attack_pb = attack_pb + (attackA->Group_Attack_Mod*numA);
@@ -53,7 +53,7 @@ void Cell::breed(){
 	int numL = ladybugs.size();
 	for (int z = 0; z < numL / 2; z++){
 		Ladybug * baby = new Ladybug();
-		float move = (rand() % 10000) / 10000.0;
+		float move = (rand() % 10000) / 10000.0f;
 		if (baby->reproduce_Prob > move){
 			add(baby);
 		}
@@ -66,7 +66,7 @@ void Cell::breed(){
 	int numA = aphids.size();
 	for (int z = 0; z < numA / 2; z++){
 		Aphid * baby = new Aphid();
-		float move = (rand() % 10000) / 10000.0;
+		float move = (rand() % 10000) / 10000.0f;
 		if (baby->reproduce_Prob > move){
 			add(baby);
 		}

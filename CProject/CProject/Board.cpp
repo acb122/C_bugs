@@ -65,14 +65,14 @@ void Board::move(){
 	for (int x = 0; x < this->w; x++){
 
 		for (int y = 0; y < this->h; y++){
-
-			for (int z = 0; z < cells[x][y].aphids.size(); z++){
+			int numbA = cells[x][y].aphids.size();
+			for (int z = 0; z < numbA; z++){
 
 				Aphid * moveA = cells[x][y].aphids.front();
 				cells[x][y].aphids.pop_front();
 
 
-				float move = (rand() % 10000) / 10000.0;
+				float move = (rand() % 10000) / 10000.0f;
 
 				if (move < moveA->movement_Prob&&moveA->hasMoved == false)
 				{
@@ -124,11 +124,13 @@ void Board::move(){
 
 
 			}
-			for (int z = 0; z < cells[x][y].ladybugs.size(); z++){
+
+			int numb = cells[x][y].ladybugs.size();
+			for (int   z = 0; z < numb; z++){
 
 				Ladybug * moveL = cells[x][y].ladybugs.front();
 				cells[x][y].ladybugs.pop_front();
-				float move = (rand() % 10000) / 10000.0;
+				float move = (rand() % 10000) / 10000.0f;
 
 				if (move < moveL->movement_Prob&&moveL->hasMoved == false)
 				{
@@ -234,15 +236,16 @@ void Board::move(){
 
 		for (int y = 0; y < this->h; y++){
 
-			for (int z = 0; z < cells[x][y].aphids.size(); z++){
+			int numb = cells[x][y].aphids.size();
+			for (int  z = 0; z < numb; z++){
 				Aphid * moveA = cells[x][y].aphids.front();
 				cells[x][y].aphids.pop_front();
 				moveA->hasMoved = false;
 				cells[x][y].aphids.push_back(moveA);
 
 			}
-
-			for (int z = 0; z < cells[x][y].ladybugs.size(); z++){
+			int numbL = cells[x][y].ladybugs.size();
+			for (int z = 0; z < numbL; z++){
 
 				Ladybug * moveA = cells[x][y].ladybugs.front();
 				cells[x][y].ladybugs.pop_front();
@@ -267,7 +270,7 @@ bool Board::empty(){
 	}
 	
 	cout <<" Number of Aphids left "<< counterA <<endl;
-	cout << " Number of Ladybugs left " << counterL << endl;
+	cout << " Number of Ladybugs left " << counterL << endl<<endl;
 	if (counterA == 0 || counterL == 0){
 		return true;
 
